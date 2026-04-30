@@ -5,238 +5,410 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Service — Tap Cricket</title>
   <style>
+    :root {
+      --bg:          #F4F6FB;
+      --surface:     #FFFFFF;
+      --accent:      #FF4F3B;
+      --accent-deep: #D93020;
+      --navy:        #0F1B3D;
+      --muted:       #6B7A99;
+      --border:      #E4E9F5;
+      --success:     #1A8A4A;
+      --radius-md:   12px;
+      --radius-lg:   20px;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #1a1a1a;
-      background: #ffffff;
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
+      font-size: 15px; line-height: 1.75;
+      color: var(--navy); background: var(--bg); min-height: 100vh;
     }
-    h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; color: #111; }
-    .meta { font-size: 13px; color: #666; margin-bottom: 40px; }
-    h2 { font-size: 18px; font-weight: 700; margin: 36px 0 10px; color: #111; }
-    p  { margin-bottom: 14px; color: #333; }
-    ul { margin: 0 0 14px 20px; color: #333; }
-    li { margin-bottom: 6px; }
-    a  { color: #007AFF; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .badge {
-      display: inline-block;
-      background: #0A8F52;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-bottom: 20px;
+    .header {
+      background: var(--navy);
+      padding: 32px 24px 28px;
+      text-align: center;
     }
-    hr { border: none; border-top: 1px solid #eee; margin: 40px 0; }
-    footer { font-size: 13px; color: #999; margin-top: 60px; }
+    .header-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #fff;
+      font-size: 12px; font-weight: 800;
+      padding: 5px 14px; border-radius: 99px;
+      letter-spacing: 0.5px; margin-bottom: 14px;
+    }
+    .header-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.6); }
+    .header h1 { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.4px; margin-bottom: 6px; }
+    .header .meta { font-size: 12px; color: rgba(255,255,255,0.4); }
+    .page { max-width: 720px; margin: 0 auto; padding: 28px 16px 80px; }
+
+    /* Summary strip */
+    .summary-strip {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .strip-item { text-align: center; }
+    .strip-icon { font-size: 22px; margin-bottom: 4px; }
+    .strip-label { font-size: 11px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .strip-sub   { font-size: 10px; color: var(--muted); line-height: 1.3; }
+
+    .section {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 20px 20px 16px;
+      margin-bottom: 12px;
+    }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .section-num {
+      width: 32px; height: 32px; border-radius: 10px;
+      background: var(--navy); color: #fff;
+      font-size: 13px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .section h2 { font-size: 15px; font-weight: 800; color: var(--navy); }
+    p { margin-bottom: 10px; color: #2C3A5A; font-size: 14px; line-height: 1.7; }
+    p:last-child { margin-bottom: 0; }
+    .sub-label {
+      font-size: 10px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.9px; color: var(--muted); margin: 12px 0 6px;
+    }
+    ul { list-style: none; padding: 0; margin-bottom: 10px; }
+    ul li {
+      display: flex; gap: 10px;
+      font-size: 14px; color: #2C3A5A;
+      padding: 7px 0; border-bottom: 1px solid #F4F6FB; line-height: 1.5;
+    }
+    ul li:last-child { border-bottom: none; }
+    ul li::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--navy); flex-shrink: 0; margin-top: 7px;
+    }
+    ul.danger li::before { background: var(--accent); }
+
+    .notice {
+      background: #FFF0EE; border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 11px 14px; font-size: 13px; color: #6B2A20; line-height: 1.6; margin: 10px 0;
+    }
+    .notice strong { color: var(--accent-deep); }
+    .notice-blue {
+      background: #EBF3FF; border-left: 3px solid #3B82F6;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 11px 14px; font-size: 13px; color: #1E3A6E; line-height: 1.6; margin: 10px 0;
+    }
+    .notice-navy {
+      background: #EEF0F6; border-left: 3px solid var(--navy);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 11px 14px; font-size: 13px; color: var(--navy); line-height: 1.6; margin: 10px 0;
+    }
+
+    /* third-party rows */
+    .service-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 9px 0; border-bottom: 1px solid #F4F6FB;
+    }
+    .service-row:last-child { border-bottom: none; }
+    .service-icon {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--bg); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; flex-shrink: 0;
+    }
+    .service-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .service-desc { font-size: 11px; color: var(--muted); }
+    .service-link { font-size: 11px; color: var(--accent); font-weight: 600; text-decoration: none; }
+    .service-link:hover { text-decoration: underline; }
+
+    /* liability box */
+    .liability-box {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 14px 16px; margin: 10px 0;
+    }
+    .liability-label { font-size: 11px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 6px; }
+    .liability-amount { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
+    .liability-sub { font-size: 12px; color: var(--muted); }
+
+    .contact-card {
+      background: var(--navy); border-radius: var(--radius-lg);
+      padding: 24px; text-align: center; margin-bottom: 12px;
+    }
+    .cc-label   { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.6px; }
+    .cc-company { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 3px; }
+    .cc-detail  { font-size: 13px; color: rgba(255,255,255,0.5); }
+    .cc-email-wrap { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .contact-card a { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 14px; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    footer { text-align: center; font-size: 12px; color: var(--muted); padding: 0 16px 40px; }
+    footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 500px) {
+      .summary-strip { grid-template-columns: 1fr; }
+      .header h1 { font-size: 22px; }
+      .page { padding: 18px 12px 60px; }
+    }
   </style>
 </head>
 <body>
 
+<div class="header">
+  <div class="header-badge"><span class="dot"></span>🏏 Tap Cricket</div>
   <h1>Terms of Service</h1>
-  <p class="meta">Last updated: March 27, 2026 &nbsp;·&nbsp; Effective: March 27, 2026</p>
-  <span class="badge">Tap Cricket</span>
+  <p class="meta">Last updated: April 30, 2026 &nbsp;·&nbsp; Effective: April 30, 2026</p>
+</div>
 
-  <p>
-    These Terms of Service ("Terms") govern your use of the <strong>Tap Cricket</strong> mobile
-    application ("App") operated by Placeholder Pvt Ltd ("we", "us", or "our"), a company
-    incorporated in India.
-  </p>
-  <p>
-    By downloading, installing, or using the App, you confirm that you have read, understood,
-    and agree to be bound by these Terms. If you do not agree, do not use the App.
-  </p>
+<div class="page">
 
-  <hr />
+  <!-- Quick summary strip -->
+  <div class="summary-strip">
+    <div class="strip-item">
+      <div class="strip-icon">🔞</div>
+      <div class="strip-label">13+ to play</div>
+      <div class="strip-sub">Under 13 needs parental consent</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-icon">🚫</div>
+      <div class="strip-label">No cheating</div>
+      <div class="strip-sub">Bots & exploits = instant ban</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-icon">⚖️</div>
+      <div class="strip-label">Indian law</div>
+      <div class="strip-sub">Governed by courts in India</div>
+    </div>
+  </div>
 
-  <h2>1. Eligibility</h2>
-  <p>
-    The App is available to users of all ages. Users under the age of 13 must have verifiable
-    parental or guardian consent before creating an account or providing any personal information.
-    By using the App, you represent that you meet this requirement or have obtained the necessary
-    consent.
-  </p>
+  <!-- Intro -->
+  <div class="section">
+    <p>These Terms of Service ("Terms") govern your use of the <strong>Tap Cricket</strong> mobile application ("App") operated by <strong>Sircle Networking Pvt Ltd</strong> ("we", "us", or "our"), a company incorporated in India.</p>
+    <div class="notice-blue">By downloading, installing, or using the App, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, do not use the App.</div>
+  </div>
 
-  <hr />
+  <!-- 1 Eligibility -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Eligibility</h2>
+    </div>
+    <p>The App is available to users of all ages. <strong>Users under the age of 13</strong> must have verifiable parental or guardian consent before creating an account or providing any personal information.</p>
+    <p>By using the App, you represent that you meet this requirement or have obtained the necessary consent. We reserve the right to terminate accounts where this requirement has not been met.</p>
+  </div>
 
-  <h2>2. Account Registration</h2>
-  <p>
-    You may use the App as a guest (limited functionality) or create an account by signing in
-    with Google or Apple. You are responsible for maintaining the confidentiality of your account
-    credentials and for all activity that occurs under your account. You agree to provide
-    accurate information and to update it as necessary.
-  </p>
-  <p>
-    You may not create an account on behalf of another person without their permission, or use
-    a display name that is offensive, impersonates another person, or violates any third-party rights.
-  </p>
+  <!-- 2 Account Registration -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Account Registration</h2>
+    </div>
+    <p>You may use the App as a guest (with limited functionality) or create an account by signing in with Google or Apple. You are responsible for:</p>
+    <ul>
+      <li>Maintaining the confidentiality of your account credentials</li>
+      <li>All activity that occurs under your account</li>
+      <li>Providing accurate information and updating it as necessary</li>
+    </ul>
+    <div class="notice">You may not create an account on behalf of another person without their permission, or use a display name that is offensive, impersonates another person, or violates any third-party rights.</div>
+  </div>
 
-  <hr />
+  <!-- 3 Acceptable Use -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>Acceptable Use</h2>
+    </div>
+    <p>You agree NOT to:</p>
+    <ul class="danger">
+      <li>Use the App for any unlawful purpose or in violation of any applicable laws or regulations</li>
+      <li>Cheat, exploit bugs, use bots, or manipulate game mechanics to gain an unfair advantage</li>
+      <li>Impersonate any person or entity, or misrepresent your affiliation with any person or entity</li>
+      <li>Harass, abuse, threaten, or harm other players</li>
+      <li>Attempt to gain unauthorised access to our systems, servers, or databases</li>
+      <li>Reverse engineer, decompile, or disassemble the App or any part of it</li>
+      <li>Use the App to distribute spam, malware, or other harmful content</li>
+      <li>Scrape, collect, or harvest data from the App without our written permission</li>
+    </ul>
+    <div class="notice">We reserve the right to <strong>suspend or permanently ban</strong> any account found to be in violation of these rules, without prior notice and without refund.</div>
+  </div>
 
-  <h2>3. Acceptable Use</h2>
-  <p>You agree not to:</p>
-  <ul>
-    <li>Use the App for any unlawful purpose or in violation of any applicable laws or regulations</li>
-    <li>Cheat, exploit bugs, use bots, or manipulate game mechanics to gain an unfair advantage</li>
-    <li>Impersonate any person or entity, or misrepresent your affiliation with any person or entity</li>
-    <li>Harass, abuse, or harm other users</li>
-    <li>Attempt to gain unauthorised access to our systems, servers, or databases</li>
-    <li>Reverse engineer, decompile, or disassemble the App or any part of it</li>
-    <li>Use the App to distribute spam, malware, or other harmful content</li>
-    <li>Scrape, collect, or harvest data from the App without our written permission</li>
-  </ul>
-  <p>
-    We reserve the right to suspend or permanently ban any account found to be in violation
-    of these rules, without prior notice and without refund.
-  </p>
+  <!-- 4 Leaderboards & City Thrones -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>Leaderboards and City Thrones</h2>
+    </div>
+    <p>The App features global leaderboards and a city throne system where your display name and scores are visible to other users. By participating, you consent to your display name and game performance data being displayed publicly within the App.</p>
+    <p>You can change your display name at any time in the App settings.</p>
+    <div class="notice-navy">We reserve the right to reset, adjust, or remove leaderboard entries or throne records at our discretion, including in cases of suspected cheating or system errors.</div>
+  </div>
 
-  <hr />
+  <!-- 5 Intellectual Property -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Intellectual Property</h2>
+    </div>
+    <p>All content in the App — including but not limited to graphics, text, logos, game mechanics, sounds, and code — is owned by or licensed to Sircle Networking Pvt Ltd and is protected by applicable intellectual property laws.</p>
+    <p>You are granted a <strong>limited, non-exclusive, non-transferable licence</strong> to use the App solely for personal, non-commercial purposes. You may not:</p>
+    <ul>
+      <li>Copy, modify, distribute, sell, or lease any part of the App or its content</li>
+      <li>Reverse engineer or attempt to extract the source code of the App</li>
+      <li>Use any content from the App for commercial purposes without written consent</li>
+    </ul>
+  </div>
 
-  <h2>4. Leaderboards and City Thrones</h2>
-  <p>
-    The App features global leaderboards and a city throne system where your display name and
-    scores are visible to other users. By participating, you consent to your display name and
-    game performance data being displayed publicly within the App. You can change your display
-    name at any time in the App settings.
-  </p>
-  <p>
-    We reserve the right to reset, adjust, or remove leaderboard entries or throne records
-    at our discretion, including in cases of suspected cheating or system errors.
-  </p>
+  <!-- 6 User-Generated Content -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>User-Generated Content</h2>
+    </div>
+    <p>The App allows you to set a display name, upload a profile photo, add an organisation name, and write city throne notes. By submitting such content, you:</p>
+    <ul>
+      <li>Grant us a worldwide, royalty-free licence to use, display, and distribute it within the App</li>
+      <li>Retain ownership of your content</li>
+      <li>Confirm it does not violate these Terms, any third-party rights, or applicable laws</li>
+    </ul>
+    <p>Profile photos are automatically screened by Microsoft Azure Content Safety before being stored. We may remove any user-generated content that violates these Terms at any time without notice.</p>
+  </div>
 
-  <hr />
+  <!-- 7 Notifications -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>Notifications</h2>
+    </div>
+    <p>The App may request permission to send push notifications related to daily challenges, streak reminders, and city conquest events. You can revoke this permission at any time through your device settings. We will not send marketing communications without your explicit consent.</p>
+  </div>
 
-  <h2>5. Intellectual Property</h2>
-  <p>
-    All content in the App — including but not limited to graphics, text, logos, game mechanics,
-    sounds, and code — is owned by or licensed to Placeholder Pvt Ltd and is protected by
-    applicable intellectual property laws. You are granted a limited, non-exclusive,
-    non-transferable licence to use the App solely for personal, non-commercial purposes.
-  </p>
-  <p>
-    You may not copy, modify, distribute, sell, or lease any part of the App or its content,
-    or reverse engineer or attempt to extract the source code of the App.
-  </p>
+  <!-- 8 Availability and Changes -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>Availability and Changes</h2>
+    </div>
+    <p>We strive to keep the App available at all times but do not guarantee uninterrupted access. We may modify, suspend, or discontinue the App or any feature at any time without notice.</p>
+    <div class="notice-blue"><strong>OTA updates:</strong> The App uses Expo's over-the-air (OTA) update system, which may deliver updates to your device silently in the background. These updates may include bug fixes and minor changes. We will notify you of updates that materially change the App's behaviour or these Terms.</div>
+    <p>We may also update these Terms at any time. Continued use of the App after updates constitutes your acceptance of the revised Terms.</p>
+  </div>
 
-  <hr />
+  <!-- 9 Disclaimer of Warranties -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Disclaimer of Warranties</h2>
+    </div>
+    <p>The App is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+    <p>We do not warrant that the App will be error-free, secure, or uninterrupted.</p>
+  </div>
 
-  <h2>6. User-Generated Content</h2>
-  <p>
-    The App allows you to set a display name and, where applicable, leave notes visible to
-    other users (e.g. city holder notes). By submitting such content, you grant us a worldwide,
-    royalty-free licence to use, display, and distribute it within the App. You retain ownership
-    of your content and are responsible for ensuring it does not violate these Terms or any
-    applicable laws.
-  </p>
+  <!-- 10 Limitation of Liability -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2>Limitation of Liability</h2>
+    </div>
+    <p>To the maximum extent permitted by applicable law, Sircle Networking Pvt Ltd and its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of or inability to use the App.</p>
+    <div class="liability-box">
+      <div class="liability-label">Maximum liability cap</div>
+      <div class="liability-amount">₹1,000</div>
+      <div class="liability-sub">Or the amount you paid us in the past 12 months, whichever is greater.</div>
+    </div>
+    <p>Note: This cap does not limit liability that cannot be excluded or limited under applicable law, including consumer protection laws in your region.</p>
+  </div>
 
-  <hr />
+  <!-- 11 Account Deletion -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <h2>Account Deletion</h2>
+    </div>
+    <p>You may delete your account at any time via <strong>Settings → Delete Account</strong> within the App. Deletion is permanent and irreversible.</p>
+    <ul>
+      <li>Your personal data will be removed from our servers within 30 days of deletion</li>
+      <li>Anonymised aggregate statistics derived from your gameplay may be retained</li>
+      <li>Leaderboard entries associated with your account will be removed</li>
+      <li>City throne records held by you will be vacated</li>
+    </ul>
+  </div>
 
-  <h2>7. Notifications</h2>
-  <p>
-    The App may request permission to send you push notifications related to daily challenges,
-    streak reminders, and city conquest events. You can revoke this permission at any time
-    through your device settings. We will not send marketing communications without your
-    explicit consent.
-  </p>
+  <!-- 12 Governing Law -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <h2>Governing Law and Dispute Resolution</h2>
+    </div>
+    <p>These Terms are governed by the laws of <strong>India</strong>, without regard to its conflict of law provisions. Any disputes arising from these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts located in India.</p>
+    <div class="notice-navy">We encourage you to contact us first at <a href="mailto:support@cocial.in" style="color:var(--accent);font-weight:700;">support@cocial.in</a> to resolve any disputes informally before pursuing formal legal action.</div>
+  </div>
 
-  <hr />
+  <!-- 13 Third-Party Services -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">13</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>The App integrates with the following third-party services. Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the practices of these third parties.</p>
+    <div class="service-row">
+      <div class="service-icon">🗄️</div>
+      <div><div class="service-name">Supabase</div><div class="service-desc">Database &amp; authentication</div></div>
+    </div>
+    <div class="service-row">
+      <div class="service-icon">🔵</div>
+      <div><div class="service-name">Google Sign-In &amp; Firebase</div><div class="service-desc">Authentication &amp; push notifications (Android)</div></div>
+    </div>
+    <div class="service-row">
+      <div class="service-icon">🍎</div>
+      <div><div class="service-name">Apple Sign-In &amp; APNs</div><div class="service-desc">Authentication &amp; push notifications (iOS)</div></div>
+    </div>
+    <div class="service-row">
+      <div class="service-icon">🛡️</div>
+      <div><div class="service-name">Sentry</div><div class="service-desc">Crash reporting</div></div>
+    </div>
+    <div class="service-row">
+      <div class="service-icon">📊</div>
+      <div><div class="service-name">PostHog</div><div class="service-desc">Anonymised analytics</div></div>
+    </div>
+    <div class="service-row">
+      <div class="service-icon">📦</div>
+      <div><div class="service-name">Expo / EAS</div><div class="service-desc">App platform &amp; OTA updates</div></div>
+    </div>
+    <div class="service-row">
+      <div class="service-icon">🤖</div>
+      <div><div class="service-name">Microsoft Azure Content Safety</div><div class="service-desc">Profile photo moderation</div></div>
+    </div>
+  </div>
 
-  <h2>8. Availability and Changes</h2>
-  <p>
-    We strive to keep the App available at all times but do not guarantee uninterrupted access.
-    We may modify, suspend, or discontinue the App or any feature at any time without notice.
-    We may also update these Terms at any time. Continued use of the App after updates
-    constitutes your acceptance of the revised Terms.
-  </p>
+  <!-- 14 Severability -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">14</div>
+      <h2>Severability</h2>
+    </div>
+    <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect.</p>
+  </div>
 
-  <hr />
+  <!-- 15 Contact -->
+  <div class="contact-card">
+    <div class="cc-label">15 · Contact Us</div>
+    <div class="cc-company">Sircle Networking Pvt Ltd</div>
+    <div class="cc-detail">India</div>
+    <div class="cc-email-wrap">
+      <a href="mailto:support@cocial.in">support@cocial.in</a>
+    </div>
+  </div>
 
-  <h2>9. Disclaimer of Warranties</h2>
-  <p>
-    The App is provided "as is" and "as available" without warranties of any kind, either
-    express or implied, including but not limited to implied warranties of merchantability,
-    fitness for a particular purpose, or non-infringement. We do not warrant that the App
-    will be error-free, secure, or uninterrupted.
-  </p>
+</div>
 
-  <hr />
-
-  <h2>10. Limitation of Liability</h2>
-  <p>
-    To the maximum extent permitted by applicable law, Placeholder Pvt Ltd and its officers,
-    directors, employees, and agents shall not be liable for any indirect, incidental, special,
-    consequential, or punitive damages arising out of or related to your use of or inability
-    to use the App, even if we have been advised of the possibility of such damages.
-  </p>
-  <p>
-    Our total liability to you for any claims arising from these Terms or the App shall not
-    exceed INR 1,000 (Indian Rupees One Thousand) or the amount you paid us in the past
-    12 months, whichever is greater.
-  </p>
-
-  <hr />
-
-  <h2>11. Account Deletion</h2>
-  <p>
-    You may delete your account at any time via Settings → Delete Account within the App.
-    Deletion is permanent and irreversible. Your personal data will be removed from our servers
-    within 30 days of deletion. Anonymised aggregate statistics derived from your gameplay
-    may be retained.
-  </p>
-
-  <hr />
-
-  <h2>12. Governing Law and Dispute Resolution</h2>
-  <p>
-    These Terms are governed by the laws of India, without regard to its conflict of law
-    provisions. Any disputes arising from these Terms or your use of the App shall be subject
-    to the exclusive jurisdiction of the courts located in India.
-  </p>
-  <p>
-    We encourage you to contact us first at <a href="mailto:placeholder@gmail.com">placeholder@gmail.com</a>
-    to resolve any disputes informally before pursuing formal legal action.
-  </p>
-
-  <hr />
-
-  <h2>13. Third-Party Services</h2>
-  <p>
-    The App integrates with third-party services including Google Sign-In, Apple Sign-In,
-    Supabase, Firebase, Sentry, and PostHog. Your use of these services is subject to their
-    respective terms and privacy policies. We are not responsible for the practices of these
-    third parties.
-  </p>
-
-  <hr />
-
-  <h2>14. Severability</h2>
-  <p>
-    If any provision of these Terms is found to be unenforceable or invalid, that provision
-    will be limited or eliminated to the minimum extent necessary so that these Terms will
-    otherwise remain in full force and effect.
-  </p>
-
-  <hr />
-
-  <h2>15. Contact Us</h2>
-  <p>
-    If you have any questions about these Terms, please contact us:<br />
-    <strong>Placeholder Pvt Ltd</strong><br />
-    India<br />
-    Email: <a href="mailto:placeholder@gmail.com">placeholder@gmail.com</a>
-  </p>
-
-  <footer>
-    &copy; 2026 Placeholder Pvt Ltd. All rights reserved. &nbsp;·&nbsp;
-    <a href="privacy-policy.html">Privacy Policy</a>
-  </footer>
+<footer>
+  &copy; 2026 Sircle Networking Pvt Ltd. All rights reserved.
+  &nbsp;·&nbsp;
+  <a href="privacy-policy.html">Privacy Policy</a>
+</footer>
 
 </body>
 </html>
