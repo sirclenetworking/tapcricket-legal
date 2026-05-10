@@ -39,8 +39,6 @@
     .header h1 { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.4px; margin-bottom: 6px; }
     .header .meta { font-size: 12px; color: rgba(255,255,255,0.4); }
     .page { max-width: 720px; margin: 0 auto; padding: 28px 16px 80px; }
-
-    /* Summary strip */
     .summary-strip {
       background: var(--surface);
       border-radius: var(--radius-lg);
@@ -55,7 +53,6 @@
     .strip-icon { font-size: 22px; margin-bottom: 4px; }
     .strip-label { font-size: 11px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
     .strip-sub   { font-size: 10px; color: var(--muted); line-height: 1.3; }
-
     .section {
       background: var(--surface);
       border-radius: var(--radius-lg);
@@ -70,6 +67,7 @@
       font-size: 13px; font-weight: 800;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
+    .section-num.accent { background: var(--accent); }
     .section h2 { font-size: 15px; font-weight: 800; color: var(--navy); }
     p { margin-bottom: 10px; color: #2C3A5A; font-size: 14px; line-height: 1.7; }
     p:last-child { margin-bottom: 0; }
@@ -89,7 +87,6 @@
       background: var(--navy); flex-shrink: 0; margin-top: 7px;
     }
     ul.danger li::before { background: var(--accent); }
-
     .notice {
       background: #FFF0EE; border-left: 3px solid var(--accent);
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
@@ -106,8 +103,6 @@
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
       padding: 11px 14px; font-size: 13px; color: var(--navy); line-height: 1.6; margin: 10px 0;
     }
-
-    /* third-party rows */
     .service-row {
       display: flex; align-items: center; gap: 12px;
       padding: 9px 0; border-bottom: 1px solid #F4F6FB;
@@ -123,8 +118,6 @@
     .service-desc { font-size: 11px; color: var(--muted); }
     .service-link { font-size: 11px; color: var(--accent); font-weight: 600; text-decoration: none; }
     .service-link:hover { text-decoration: underline; }
-
-    /* liability box */
     .liability-box {
       background: var(--bg); border: 1px solid var(--border);
       border-radius: var(--radius-md); padding: 14px 16px; margin: 10px 0;
@@ -132,7 +125,6 @@
     .liability-label { font-size: 11px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 6px; }
     .liability-amount { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
     .liability-sub { font-size: 12px; color: var(--muted); }
-
     .contact-card {
       background: var(--navy); border-radius: var(--radius-lg);
       padding: 24px; text-align: center; margin-bottom: 12px;
@@ -143,11 +135,9 @@
     .cc-email-wrap { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); }
     .contact-card a { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 14px; }
     .contact-card a:hover { text-decoration: underline; }
-
     footer { text-align: center; font-size: 12px; color: var(--muted); padding: 0 16px 40px; }
     footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
     footer a:hover { text-decoration: underline; }
-
     @media (max-width: 500px) {
       .summary-strip { grid-template-columns: 1fr; }
       .header h1 { font-size: 22px; }
@@ -160,7 +150,7 @@
 <div class="header">
   <div class="header-badge"><span class="dot"></span>🏏 Tap Cricket</div>
   <h1>Terms of Service</h1>
-  <p class="meta">Last updated: April 30, 2026 &nbsp;·&nbsp; Effective: April 30, 2026</p>
+  <p class="meta">Last updated: May 2026 &nbsp;·&nbsp; Effective: May 2026</p>
 </div>
 
 <div class="page">
@@ -175,7 +165,7 @@
     <div class="strip-item">
       <div class="strip-icon">🚫</div>
       <div class="strip-label">No cheating</div>
-      <div class="strip-sub">Bots & exploits = instant ban</div>
+      <div class="strip-sub">Bots and exploits result in an instant ban</div>
     </div>
     <div class="strip-item">
       <div class="strip-icon">⚖️</div>
@@ -210,7 +200,7 @@
     <ul>
       <li>Maintaining the confidentiality of your account credentials</li>
       <li>All activity that occurs under your account</li>
-      <li>Providing accurate information and updating it as necessary</li>
+      <li>Providing accurate information and keeping it up to date</li>
     </ul>
     <div class="notice">You may not create an account on behalf of another person without their permission, or use a display name that is offensive, impersonates another person, or violates any third-party rights.</div>
   </div>
@@ -246,18 +236,46 @@
     <div class="notice-navy">We reserve the right to reset, adjust, or remove leaderboard entries or throne records at our discretion, including in cases of suspected cheating or system errors.</div>
   </div>
 
+  <!-- 4b PvP and Multiplayer -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num accent">4b</div>
+      <h2>Multiplayer and PvP Rules</h2>
+    </div>
+    <p>Tap Cricket includes real-time Player vs Player (PvP) modes including Global Matchmaking and Private Rooms. By participating in multiplayer matches you agree to the following rules.</p>
+
+    <div class="sub-label">Fair play</div>
+    <ul class="danger">
+      <li>You may not use any external tool, script, or technique to manipulate match outcomes, automate gameplay, or gain an unfair advantage over your opponent</li>
+      <li>Deliberately disconnecting from a live match to avoid a loss (commonly known as rage-quitting) may result in a forfeit, a recorded loss, and a temporary matchmaking suspension</li>
+      <li>Creating or using multiple accounts to inflate your leaderboard ranking or manipulate matchmaking is strictly prohibited</li>
+      <li>Exploiting connection instability, timing edge cases, or any other technical loopholes to gain an advantage in a match is a violation of these Terms</li>
+    </ul>
+
+    <div class="sub-label">Match abandonment</div>
+    <p>If you disconnect or abandon a live PvP match, the match may be forfeited and recorded as a loss on your profile. We are not responsible for disconnections caused by your network provider or device. If you experience a genuine technical failure, you can contact us at support@cocial.in and we will review the situation.</p>
+
+    <div class="sub-label">Private rooms</div>
+    <p>Private room codes expire once a match is completed or after 30 minutes of inactivity. Only share your room code with players you intend to play against. We are not responsible for unintended opponents joining a room if you share the code publicly.</p>
+
+    <div class="sub-label">Matchmaking</div>
+    <p>Global matchmaking pairs you with another player of a similar skill tier. If no suitable opponent is found within a short window, you will be paired with an AI opponent as a fallback. This is not guaranteed and depends on the number of active players at any given time.</p>
+
+    <div class="notice">We reserve the right to ban or suspend accounts found to be violating fair play rules, at our sole discretion, with or without prior notice.</div>
+  </div>
+
   <!-- 5 Intellectual Property -->
   <div class="section">
     <div class="section-header">
       <div class="section-num">5</div>
       <h2>Intellectual Property</h2>
     </div>
-    <p>All content in the App — including but not limited to graphics, text, logos, game mechanics, sounds, and code — is owned by or licensed to Sircle Networking Pvt Ltd and is protected by applicable intellectual property laws.</p>
+    <p>All content in the App, including but not limited to graphics, text, logos, game mechanics, sounds, and code, is owned by or licensed to Sircle Networking Pvt Ltd and is protected by applicable intellectual property laws.</p>
     <p>You are granted a <strong>limited, non-exclusive, non-transferable licence</strong> to use the App solely for personal, non-commercial purposes. You may not:</p>
     <ul>
       <li>Copy, modify, distribute, sell, or lease any part of the App or its content</li>
       <li>Reverse engineer or attempt to extract the source code of the App</li>
-      <li>Use any content from the App for commercial purposes without written consent</li>
+      <li>Use any content from the App for commercial purposes without our written consent</li>
     </ul>
   </div>
 
@@ -282,7 +300,7 @@
       <div class="section-num">7</div>
       <h2>Notifications</h2>
     </div>
-    <p>The App may request permission to send push notifications related to daily challenges, streak reminders, and city conquest events. You can revoke this permission at any time through your device settings. We will not send marketing communications without your explicit consent.</p>
+    <p>The App may request permission to send push notifications related to daily challenges, streak reminders, city conquest events, and multiplayer match activity. You can revoke this permission at any time through your device settings. We will not send marketing communications without your explicit consent.</p>
   </div>
 
   <!-- 8 Availability and Changes -->
@@ -292,8 +310,8 @@
       <h2>Availability and Changes</h2>
     </div>
     <p>We strive to keep the App available at all times but do not guarantee uninterrupted access. We may modify, suspend, or discontinue the App or any feature at any time without notice.</p>
-    <div class="notice-blue"><strong>OTA updates:</strong> The App uses Expo's over-the-air (OTA) update system, which may deliver updates to your device silently in the background. These updates may include bug fixes and minor changes. We will notify you of updates that materially change the App's behaviour or these Terms.</div>
-    <p>We may also update these Terms at any time. Continued use of the App after updates constitutes your acceptance of the revised Terms.</p>
+    <div class="notice-blue"><strong>OTA updates:</strong> The App uses Expo's over-the-air update system, which may deliver updates to your device silently in the background. These updates may include bug fixes and minor changes. We will notify you of updates that materially change the App's behaviour or these Terms.</div>
+    <p>We may also update these Terms at any time. Continued use of the App after updates are posted constitutes your acceptance of the revised Terms.</p>
   </div>
 
   <!-- 9 Disclaimer of Warranties -->
@@ -315,7 +333,7 @@
     <p>To the maximum extent permitted by applicable law, Sircle Networking Pvt Ltd and its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of or inability to use the App.</p>
     <div class="liability-box">
       <div class="liability-label">Maximum liability cap</div>
-      <div class="liability-amount">₹1,000</div>
+      <div class="liability-amount">Rs. 1,000</div>
       <div class="liability-sub">Or the amount you paid us in the past 12 months, whichever is greater.</div>
     </div>
     <p>Note: This cap does not limit liability that cannot be excluded or limited under applicable law, including consumer protection laws in your region.</p>
@@ -327,12 +345,13 @@
       <div class="section-num">11</div>
       <h2>Account Deletion</h2>
     </div>
-    <p>You may delete your account at any time via <strong>Settings → Delete Account</strong> within the App. Deletion is permanent and irreversible.</p>
+    <p>You may delete your account at any time via <strong>Settings then Delete Account</strong> within the App. Deletion is permanent and irreversible.</p>
     <ul>
       <li>Your personal data will be removed from our servers within 30 days of deletion</li>
       <li>Anonymised aggregate statistics derived from your gameplay may be retained</li>
       <li>Leaderboard entries associated with your account will be removed</li>
       <li>City throne records held by you will be vacated</li>
+      <li>Any in-progress PvP matches at the time of deletion may be forfeited</li>
     </ul>
   </div>
 
@@ -355,15 +374,15 @@
     <p>The App integrates with the following third-party services. Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the practices of these third parties.</p>
     <div class="service-row">
       <div class="service-icon">🗄️</div>
-      <div><div class="service-name">Supabase</div><div class="service-desc">Database &amp; authentication</div></div>
+      <div><div class="service-name">Supabase</div><div class="service-desc">Database, authentication, and real-time PvP match infrastructure</div></div>
     </div>
     <div class="service-row">
       <div class="service-icon">🔵</div>
-      <div><div class="service-name">Google Sign-In &amp; Firebase</div><div class="service-desc">Authentication &amp; push notifications (Android)</div></div>
+      <div><div class="service-name">Google Sign-In and Firebase</div><div class="service-desc">Authentication and push notifications on Android</div></div>
     </div>
     <div class="service-row">
       <div class="service-icon">🍎</div>
-      <div><div class="service-name">Apple Sign-In &amp; APNs</div><div class="service-desc">Authentication &amp; push notifications (iOS)</div></div>
+      <div><div class="service-name">Apple Sign-In and APNs</div><div class="service-desc">Authentication and push notifications on iOS</div></div>
     </div>
     <div class="service-row">
       <div class="service-icon">🛡️</div>
@@ -371,11 +390,11 @@
     </div>
     <div class="service-row">
       <div class="service-icon">📊</div>
-      <div><div class="service-name">PostHog</div><div class="service-desc">Anonymised analytics</div></div>
+      <div><div class="service-name">PostHog</div><div class="service-desc">Anonymised analytics, collected only with your consent</div></div>
     </div>
     <div class="service-row">
       <div class="service-icon">📦</div>
-      <div><div class="service-name">Expo / EAS</div><div class="service-desc">App platform &amp; OTA updates</div></div>
+      <div><div class="service-name">Expo and EAS</div><div class="service-desc">App platform and over-the-air updates</div></div>
     </div>
     <div class="service-row">
       <div class="service-icon">🤖</div>
