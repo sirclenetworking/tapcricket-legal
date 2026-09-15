@@ -4,49 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Tap Cricket</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:          #F4F6FB;
-      --surface:     #FFFFFF;
-      --accent:      #FF4F3B;
-      --accent-deep: #D93020;
-      --navy:        #0F1B3D;
-      --muted:       #6B7A99;
-      --border:      #E4E9F5;
-      --success:     #1A8A4A;
-      --radius-md:   12px;
-      --radius-lg:   20px;
+      /* Pulled directly from theme.ts (COLORS) — the app's current
+         candy-pastel palette, not the old navy/coral scheme. */
+      --sky:          #EAF4FF;
+      --sky-border:   #D7E8FA;
+      --grass:        #B7E4A0;
+      --grass-text:   #2F5C1D;
+      --sun:          #FFD166;
+      --sun-text:     #5A431E;
+      --pink:         #FF6F91;
+      --pink-deep:    #E6597A;
+      --blue:         #6EC6FF;
+      --blue-text:    #0D3D5C;
+      --coral:        #F16A5B;
+      --purple:       #C9A6F5;
+      --purple-text:  #4B2E7A;
+
+      --win:          #3B6D11;
+      --win-bg:       #E8F3DD;
+      --loss:         #993C1D;
+      --loss-bg:      #FAE4DC;
+      --gold:         #B4780B;
+      --gold-bg:      #FFF1D0;
+
+      --text-heading: #4A3826;
+      --text-body:    #8A7A5E;
+      --surface:      #FFFFFF;
+
+      --bg:           var(--sky);
+      --border:       var(--sky-border);
+      --accent:       var(--pink);
+      --accent-deep:  var(--pink-deep);
+      --muted:        var(--text-body);
+      --success:      var(--win);
+
+      --font-heading: 'Baloo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body:    'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --radius-md:   14px;
+      --radius-lg:   22px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--font-body);
+      font-weight: 500;
       font-size: 15px;
       line-height: 1.75;
-      color: var(--navy);
+      color: var(--text-heading);
       background: var(--bg);
       min-height: 100vh;
     }
     .header {
-      background: var(--navy);
-      padding: 32px 24px 28px;
+      background: var(--pink);
+      padding: 34px 24px 30px;
       text-align: center;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
     }
     .header-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--accent);
+      background: rgba(255,255,255,0.22);
       color: #fff;
+      font-family: var(--font-heading);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 700;
       padding: 5px 14px;
       border-radius: 99px;
       letter-spacing: 0.5px;
       margin-bottom: 14px;
     }
-    .header-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.6); }
-    .header h1 { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.4px; margin-bottom: 6px; }
-    .header .meta { font-size: 12px; color: rgba(255,255,255,0.4); }
+    .header-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.7); }
+    .header h1 { font-family: var(--font-heading); font-size: 27px; font-weight: 800; color: #fff; letter-spacing: -0.2px; margin-bottom: 6px; }
+    .header .meta { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.75); }
     .page { max-width: 720px; margin: 0 auto; padding: 28px 16px 80px; }
     .section {
       background: var(--surface);
@@ -54,6 +90,7 @@
       border: 1px solid var(--border);
       padding: 20px 20px 16px;
       margin-bottom: 12px;
+      box-shadow: 0 2px 10px rgba(74,56,38,0.04);
     }
     .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
     .section-num {
@@ -61,24 +98,25 @@
       border-radius: 10px;
       background: var(--accent);
       color: #fff;
+      font-family: var(--font-heading);
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 700;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .section h2 { font-size: 15px; font-weight: 800; color: var(--navy); }
-    p { margin-bottom: 10px; color: #2C3A5A; font-size: 14px; line-height: 1.7; }
+    .section h2 { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--text-heading); }
+    p { margin-bottom: 10px; color: var(--text-heading); font-size: 14px; line-height: 1.7; }
     p:last-child { margin-bottom: 0; }
     .sub-label {
-      font-size: 10px; font-weight: 800; text-transform: uppercase;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
       letter-spacing: 0.9px; color: var(--muted); margin: 12px 0 6px;
     }
     ul { list-style: none; padding: 0; margin-bottom: 10px; }
     ul li {
       display: flex; gap: 10px;
-      font-size: 14px; color: #2C3A5A;
+      font-size: 14px; color: var(--text-heading);
       padding: 7px 0;
-      border-bottom: 1px solid #F4F6FB;
+      border-bottom: 1px solid var(--bg);
       line-height: 1.5;
     }
     ul li:last-child { border-bottom: none; }
@@ -91,26 +129,26 @@
       font-size: 12px; font-weight: 700;
       padding: 4px 12px; border-radius: 99px; margin: 4px 4px 4px 0;
     }
-    .pill-green { background: #E6F7EE; color: var(--success); }
-    .pill-blue  { background: #E8F0FD; color: #1D4ED8; }
+    .pill-green { background: var(--win-bg); color: var(--win); }
+    .pill-blue  { background: #E4F5FF; color: var(--blue-text); }
     .notice {
-      background: #FFF0EE;
-      border-left: 3px solid var(--accent);
+      background: #FFEFE9;
+      border-left: 3px solid var(--coral);
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
       padding: 11px 14px;
-      font-size: 13px; color: #6B2A20; line-height: 1.6; margin: 10px 0;
+      font-size: 13px; color: var(--loss); line-height: 1.6; margin: 10px 0;
     }
-    .notice strong { color: var(--accent-deep); }
+    .notice strong { color: var(--loss); }
     .notice-blue {
-      background: #EBF3FF;
-      border-left: 3px solid #3B82F6;
+      background: #E9F6FF;
+      border-left: 3px solid var(--blue);
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
       padding: 11px 14px;
-      font-size: 13px; color: #1E3A6E; line-height: 1.6; margin: 10px 0;
+      font-size: 13px; color: var(--blue-text); line-height: 1.6; margin: 10px 0;
     }
     .service-row {
       display: flex; align-items: flex-start; gap: 12px;
-      padding: 10px 0; border-bottom: 1px solid #F4F6FB;
+      padding: 10px 0; border-bottom: 1px solid var(--bg);
     }
     .service-row:last-child { border-bottom: none; }
     .service-icon {
@@ -119,26 +157,26 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 15px; flex-shrink: 0;
     }
-    .service-name { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .service-name { font-size: 13px; font-weight: 700; color: var(--text-heading); margin-bottom: 2px; }
     .service-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
-    .service-link { font-size: 11px; color: var(--accent); font-weight: 600; text-decoration: none; margin-top: 3px; display: inline-block; }
+    .service-link { font-size: 11px; color: var(--accent-deep); font-weight: 700; text-decoration: none; margin-top: 3px; display: inline-block; }
     .service-link:hover { text-decoration: underline; }
     .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 10px; }
     .right-card { background: var(--bg); border-radius: var(--radius-md); padding: 11px 12px; border: 1px solid var(--border); }
-    .right-label { font-size: 12px; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
+    .right-label { font-size: 12px; font-weight: 700; color: var(--text-heading); margin-bottom: 3px; }
     .right-desc  { font-size: 11px; color: var(--muted); line-height: 1.4; }
     .contact-card {
-      background: var(--navy); border-radius: var(--radius-lg);
+      background: var(--purple-text); border-radius: var(--radius-lg);
       padding: 24px; text-align: center; margin-bottom: 12px;
     }
-    .contact-card .cc-label   { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.6px; }
-    .contact-card .cc-company { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 3px; }
-    .contact-card .cc-detail  { font-size: 13px; color: rgba(255,255,255,0.5); }
-    .contact-card a { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 14px; }
+    .contact-card .cc-label   { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.6px; }
+    .contact-card .cc-company { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+    .contact-card .cc-detail  { font-size: 13px; color: rgba(255,255,255,0.65); }
+    .contact-card a { color: var(--purple); text-decoration: none; font-weight: 700; font-size: 14px; }
     .contact-card a:hover { text-decoration: underline; }
-    .cc-email-wrap { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .cc-email-wrap { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.15); }
     footer { text-align: center; font-size: 12px; color: var(--muted); padding: 0 16px 40px; }
-    footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    footer a { color: var(--accent-deep); text-decoration: none; font-weight: 700; }
     footer a:hover { text-decoration: underline; }
     @media (max-width: 500px) {
       .rights-grid { grid-template-columns: 1fr; }
@@ -350,7 +388,7 @@
       <h2>Children's Privacy</h2>
     </div>
     <div class="notice"><strong>Tap Cricket is intended for users aged 13 and older.</strong> Users under 13 may only use the App with verifiable parental or guardian consent.</div>
-    <p>We do not knowingly collect personal information from children under 13 without such consent. If you believe a child under 13 has provided us with personal information without parental consent, please contact us at <a href="mailto:support@cocial.in" style="color:var(--accent);font-weight:700;">support@cocial.in</a> and we will delete it promptly.</p>
+    <p>We do not knowingly collect personal information from children under 13 without such consent. If you believe a child under 13 has provided us with personal information without parental consent, please contact us at <a href="mailto:support@cocial.in" style="color:var(--accent-deep);font-weight:700;">support@cocial.in</a> and we will delete it promptly.</p>
     <p>For users in the European Economic Area under the age of 16, we rely on parental consent as the lawful basis for processing personal data, in accordance with GDPR.</p>
   </div>
 
@@ -387,7 +425,7 @@
         <div class="right-desc">Disable at any time via your device settings</div>
       </div>
     </div>
-    <p style="margin-top:14px;">To exercise any of these rights, contact us at <a href="mailto:support@cocial.in" style="color:var(--accent);font-weight:700;">support@cocial.in</a>.</p>
+    <p style="margin-top:14px;">To exercise any of these rights, contact us at <a href="mailto:support@cocial.in" style="color:var(--accent-deep);font-weight:700;">support@cocial.in</a>.</p>
   </div>
 
   <!-- 8 -->
