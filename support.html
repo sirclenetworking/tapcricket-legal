@@ -3,226 +3,294 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tap Cricket — Support</title>
+  <title>Support - Tap Cricket</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --sky:          #EAF4FF;
+      --sky-border:   #D7E8FA;
+      --grass:        #B7E4A0;
+      --sun:          #FFD166;
+      --pink:         #FF6F91;
+      --pink-deep:    #E6597A;
+      --purple:       #C9A6F5;
+      --purple-text:  #4B2E7A;
+      --win:          #3B6D11;
+      --win-bg:       #E8F3DD;
 
+      --text-heading: #4A3826;
+      --text-body:    #8A7A5E;
+      --surface:      #FFFFFF;
+
+      --bg:           var(--sky);
+      --border:       var(--sky-border);
+      --accent:       var(--pink);
+      --accent-deep:  var(--pink-deep);
+      --muted:        var(--text-body);
+
+      --font-heading: 'Baloo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body:    'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --radius-md:   14px;
+      --radius-lg:   22px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0A0A0F;
-      color: #F9FAFB;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-heading);
+      background: var(--bg);
       min-height: 100vh;
     }
-
-    header {
-      background: #111118;
-      border-bottom: 1px solid #1F1F2E;
-      padding: 20px 24px;
-      display: flex;
+    .header {
+      background: var(--pink);
+      padding: 34px 24px 30px;
+      text-align: center;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+    }
+    .header-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
-    }
-
-    header .emoji { font-size: 36px; }
-
-    header .title {
-      font-size: 22px;
-      font-weight: 700;
-      color: #FFFFFF;
-    }
-
-    header .sub {
-      font-size: 13px;
-      color: #9CA3AF;
-      margin-top: 2px;
-    }
-
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
-
-    h2 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 16px;
-      margin-top: 40px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #1F1F2E;
-    }
-
-    h2:first-of-type { margin-top: 0; }
-
-    p {
-      font-size: 15px;
-      color: #D1D5DB;
-      line-height: 1.7;
-      margin-bottom: 12px;
-    }
-
-    .contact-card {
-      background: #111118;
-      border: 1px solid #1F1F2E;
-      border-radius: 16px;
-      padding: 24px;
-      margin-top: 16px;
-    }
-
-    .contact-card .label {
+      gap: 8px;
+      background: rgba(255,255,255,0.22);
+      color: #fff;
+      font-family: var(--font-heading);
       font-size: 12px;
-      color: #6B7280;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 99px;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .header-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.7); }
+    .header h1 { font-family: var(--font-heading); font-size: 27px; font-weight: 800; color: #fff; letter-spacing: -0.2px; margin-bottom: 6px; }
+    .header .meta { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.75); }
+    .page { max-width: 680px; margin: 0 auto; padding: 28px 16px 80px; }
+
+    .email-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(74,56,38,0.04);
+    }
+    .email-label {
+      font-size: 11px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
-    }
-
-    .contact-card a {
-      font-size: 17px;
-      font-weight: 600;
-      color: #E54E27;
-      text-decoration: none;
-    }
-
-    .contact-card a:hover { text-decoration: underline; }
-
-    .contact-card .note {
-      font-size: 13px;
-      color: #6B7280;
-      margin-top: 8px;
-    }
-
-    .faq-item {
-      background: #111118;
-      border: 1px solid #1F1F2E;
-      border-radius: 12px;
-      padding: 18px 20px;
+      letter-spacing: 0.9px;
+      color: var(--muted);
       margin-bottom: 10px;
     }
-
-    .faq-item .q {
-      font-size: 15px;
-      font-weight: 600;
-      color: #FFFFFF;
-      margin-bottom: 8px;
+    .email-link {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent-deep);
+      text-decoration: none;
+      padding: 10px 22px;
+      background: var(--bg);
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+    .email-link:hover { text-decoration: underline; }
+    .email-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 14px;
     }
 
-    .faq-item .a {
+    .section {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 20px 20px 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 10px rgba(74,56,38,0.04);
+    }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .section-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section h2 { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--text-heading); }
+    p { margin-bottom: 10px; color: var(--text-heading); font-size: 14px; line-height: 1.7; }
+    p:last-child { margin-bottom: 0; }
+
+    ul { list-style: none; padding: 0; margin-bottom: 10px; }
+    ul li {
+      display: flex;
+      gap: 10px;
       font-size: 14px;
-      color: #9CA3AF;
+      color: var(--text-heading);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--bg);
+      line-height: 1.5;
+    }
+    ul li:last-child { border-bottom: none; }
+    ul li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+    }
+    .steps li {
+      counter-increment: step;
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--bg);
+      font-size: 14px;
+      color: var(--text-heading);
       line-height: 1.6;
     }
-
-    .badge {
-      display: inline-block;
-      background: #1F1F2E;
-      color: #9CA3AF;
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: counter(step);
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--purple-text);
+      color: #fff;
+      font-family: var(--font-heading);
       font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-right: 6px;
-      margin-bottom: 6px;
-    }
-
-    .links {
+      font-weight: 700;
       display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 16px;
+      align-items: center;
+      justify-content: center;
     }
 
-    .links a {
-      color: #E54E27;
-      font-size: 14px;
-      text-decoration: none;
-      font-weight: 500;
+    .notice-blue {
+      background: #E9F6FF;
+      border-left: 3px solid #6EC6FF;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 11px 14px;
+      font-size: 13px;
+      color: #0D3D5C;
+      line-height: 1.6;
+      margin: 10px 0;
     }
-
-    .links a:hover { text-decoration: underline; }
 
     footer {
       text-align: center;
       font-size: 12px;
-      color: #4B5563;
-      padding: 40px 24px 24px;
+      color: var(--muted);
+      padding: 0 16px 40px;
+    }
+    footer a {
+      color: var(--accent-deep);
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 6px;
+    }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 500px) {
+      .header h1 { font-size: 22px; }
+      .page { padding: 18px 12px 60px; }
+      .email-link { font-size: 18px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="emoji">🏏</div>
-    <div>
-      <div class="title">Tap Cricket</div>
-      <div class="sub">Support Center</div>
-    </div>
-  </header>
+<div class="header">
+  <div class="header-badge"><span class="dot"></span>Tap Cricket</div>
+  <h1>Support</h1>
+  <p class="meta">We are happy to help</p>
+</div>
 
-  <div class="container">
+<div class="page">
 
-    <h2>Contact Us</h2>
-    <p>Having an issue or need help? Reach out and we'll get back to you within 24 hours.</p>
-    <div class="contact-card">
-      <div class="label">Email support</div>
-      <a href="mailto:support@cocial.in">support@cocial.in</a>
-      <div class="note">We respond within 24 hours on business days.</div>
-    </div>
-
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <div class="q">How do I sign in?</div>
-      <div class="a">Tap "Continue with Google" or "Continue with Apple" on the sign-in screen. You can also tap "Not now" to play as a guest — your progress will be saved locally.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="q">How do I earn Season Points and climb tiers?</div>
-      <div class="a">You earn Season Points by completing matches. Winning earns more points than losing. Points determine your tier — Bronze (0+), Silver (200+), Gold (500+), Platinum (1000+), Diamond (2000+), and Legendary (3500+). Completing daily challenges also awards bonus points. Your tier and total points are visible on the home screen and profile screen.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="q">How does multiplayer work?</div>
-      <div class="a">Tap PLAY on the home screen to enter global matchmaking. You'll be paired with a live opponent within seconds. If no one is available, a smart bot steps in so you're never left waiting. You can also create a Private Room and share a 6-character code with a friend to play directly.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="q">What is City Challenge?</div>
-      <div class="a">City Challenge lets you conquer Indian cities by winning matches. Each city has a Batting King and a Bowling King throne — beat the current holder to claim it. Conquering cities earns you exclusive badges.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="q">How do I delete my account?</div>
-      <div class="a">Go to Profile → tap the Settings icon → scroll to the bottom → tap "Delete Account". This will permanently delete your account and all associated data.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="q">My progress didn't carry over to a new device. What do I do?</div>
-      <div class="a">Make sure you're signed in with the same Google or Apple account you used on your previous device. Your progress is tied to your account and will sync automatically once you sign in.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="q">The app crashed or something isn't working.</div>
-      <div class="a">Try force-closing the app and reopening it. If the issue persists, email us at support@cocial.in with your device model, iOS/Android version, and a description of what happened.</div>
-    </div>
-
-    <h2>App Information</h2>
-    <p>
-      <span class="badge">Version 1.0</span>
-      <span class="badge">iOS &amp; Android</span>
-      <span class="badge">Free</span>
-    </p>
-
-    <div class="links">
-      <a href="https://sirclenetworking.github.io/tapcricket-legal/privacy-policy.html">Privacy Policy</a>
-      <a href="https://sirclenetworking.github.io/tapcricket-legal/terms.html">Terms of Service</a>
-    </div>
-
+  <div class="email-card">
+    <div class="email-label">Contact us</div>
+    <a class="email-link" href="mailto:support@cocial.in">support@cocial.in</a>
+    <p class="email-sub">Email us for any issue, question, or request related to Tap Cricket, including account deletion. We usually reply within a couple of business days.</p>
   </div>
 
-  <footer>
-    &copy; 2026 Sircle Networking Private Limited. All rights reserved.
-  </footer>
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>What you can contact us about</h2>
+    </div>
+    <p>Reach out to <a href="mailto:support@cocial.in" style="color: var(--accent-deep); font-weight: 700;">support@cocial.in</a> for any of the following, or anything else related to the app:</p>
+    <ul>
+      <li>Bugs, crashes, or gameplay issues</li>
+      <li>Problems with sign in, syncing, or your account</li>
+      <li>Questions about matchmaking, private rooms, or ranked matches</li>
+      <li>Reporting inappropriate behaviour or content from another player</li>
+      <li>Account deletion requests</li>
+      <li>Requests to access, correct, or export your data</li>
+      <li>Billing or purchase questions</li>
+      <li>General feedback and feature suggestions</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Requesting account deletion by email</h2>
+    </div>
+    <p>You can delete your account directly in the app at any time, or you can email us and we will take care of it for you. If you email us, please include the following so we can find and remove your account quickly:</p>
+    <ol class="steps">
+      <li>The display name shown on your profile in the app</li>
+      <li>The email address used to sign in, if you signed in with Google or Apple</li>
+      <li>A short note asking for your account and data to be deleted</li>
+    </ol>
+    <div class="notice-blue">Once we confirm the request, your personal data is permanently removed from our servers within 30 days, in line with our Privacy Policy.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>Before you email us</h2>
+    </div>
+    <p>A few quick checks that solve most issues instantly:</p>
+    <ul>
+      <li>Make sure you are on the latest version of the app from the App Store or Play Store</li>
+      <li>Try closing and reopening the app if a match or screen feels stuck</li>
+      <li>Check your internet connection for sync or multiplayer issues</li>
+      <li>Restart your device if notifications are not arriving as expected</li>
+    </ul>
+    <p>Still stuck? Email us and we will help you sort it out.</p>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 Sircle Networking Pvt Ltd. All rights reserved.
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-of-service.html">Terms of Service</a>
+</footer>
 
 </body>
 </html>
